@@ -1,8 +1,8 @@
 import mongoose, { Schema } from "mongoose";
-import { Faction } from "@schemas/factionSchema";
+import { Keyword } from "@schemas/keywordSchema";
 
-const FactionSchema: Schema = new mongoose.Schema<Faction>({
+const KeywordSchema: Schema = new mongoose.Schema<Keyword>({
     name: { type: String, required: true, minlength: 2 },
 }, { timestamps: true });
 
-export const FactionModel = mongoose.model<Faction>("Faction", FactionSchema);
+export const KeywordModel = mongoose.model<Keyword>("Keyword", KeywordSchema);
