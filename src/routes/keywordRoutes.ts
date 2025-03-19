@@ -1,13 +1,13 @@
 import express from "express";
-import { createFaction, getFactions, getFactionById, updateFaction, deleteFaction } from "@controllers/factionController";
+import { createKeyword, getKeywords, getKeywordById, updateKeyword, deleteKeyword } from "@controllers/keywordController";
 
 
 const router = express.Router();
 
-router.get("/", getFactions);
-router.get("/:id", getFactionById);
-router.post("/", createFaction);
-router.put("/:id", updateFaction);
-router.delete("/:id", deleteFaction);
+router.get("/", getKeywords);
+router.get("/:id", getKeywordById);
+router.post("/", createKeyword);
+router.put("/:id", updateKeyword);
+router.delete("/:id", deleteKeyword);
 
 export default router;
