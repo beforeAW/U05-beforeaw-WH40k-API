@@ -1,5 +1,5 @@
 import { Document } from "mongoose";
 
-export interface Faction extends Document {
+export interface Keyword extends Document {
     name: string;
 }
