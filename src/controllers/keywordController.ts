@@ -1,60 +1,60 @@
 import { Request, Response } from "express";
-import { FactionModel } from "@models/factionModel";
+import { KeywordModel } from "@models/keywordModel";
 
-export const createFaction = async (req: Request, res: Response): Promise<void> => {
+export const createKeyword = async (req: Request, res: Response): Promise<void> => {
     try {
         const { name }: { name: string } = req.body;
-        const newFaction = new FactionModel({ name });
-        await newFaction.save();
-        res.status(201).json(newFaction);
+        const newKeyword = new KeywordModel({ name });
+        await newKeyword.save();
+        res.status(201).json(newKeyword);
     } catch (error) {
         res.status(400).json({ error: (error as Error).message });
     }
 };
 
-export const getFactions = async (req: Request, res: Response): Promise<void> => {
+export const getKeywords = async (req: Request, res: Response): Promise<void> => {
     try {
-        const factions = await FactionModel.find();
-        res.json(factions);
+        const keywords = await KeywordModel.find();
+        res.json(keywords);
     } catch (error) {
         res.status(500).json({ error: (error as Error).message });
     }
 };
 
-export const getFactionById = async (req: Request, res: Response): Promise<void> => {
+export const getKeywordById = async (req: Request, res: Response): Promise<void> => {
     try {
-        const faction = await FactionModel.findById(req.params.id);
-        if (!faction) {
-            res.status(404).json({ message: "Faction not found" });
+        const keyword = await KeywordModel.findById(req.params.id);
+        if (!keyword) {
+            res.status(404).json({ message: "Keyword not found" });
             return;
         }
-        res.json(faction);
+        res.json(keyword);
     } catch (error) {
         res.status(500).json({ error: (error as Error).message });
     }
 };
 
-export const updateFaction = async (req: Request, res: Response): Promise<void> => {
+export const updateKeyword = async (req: Request, res: Response): Promise<void> => {
     try {
-        const faction = await FactionModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
-        if (!faction) {
-            res.status(404).json({ message: "Faction not found" });
+        const keyword = await KeywordModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        if (!keyword) {
+            res.status(404).json({ message: "Keyword not found" });
             return;
         }
-        res.json(faction);
+        res.json(keyword);
     } catch (error) {
         res.status(500).json({ error: (error as Error).message });
     }
 };
 
-export const deleteFaction = async (req: Request, res: Response): Promise<void> => {
+export const deleteKeyword = async (req: Request, res: Response): Promise<void> => {
     try {
-        const faction = await FactionModel.findByIdAndDelete(req.params.id);
-        if (!faction) {
-            res.status(404).json({ message: "Faction not found" });
+        const keyword = await KeywordModel.findByIdAndDelete(req.params.id);
+        if (!keyword) {
+            res.status(404).json({ message: "Keyword not found" });
             return;
         }
-        res.json({ message: "Faction deleted successfully" });
+        res.json({ message: "Keyword deleted successfully" });
     } catch (error) {
         res.status(500).json({ error: (error as Error).message });
     }
