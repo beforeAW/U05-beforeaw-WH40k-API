@@ -1,6 +1,6 @@
 import { Document } from "mongoose";
 
-export interface Abilities extends Document {
+export interface Ability extends Document {
     name: string;
     description: string;
 }
