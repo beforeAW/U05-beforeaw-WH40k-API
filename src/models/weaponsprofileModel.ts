@@ -1,8 +1,8 @@
 import mongoose, { Schema } from "mongoose";
-import { Keyword } from "@schemas/keywordSchema";
+import { Weaponsprofile } from "@schemas/weaponsprofileSchema";
 
-const KeywordSchema: Schema = new mongoose.Schema<Keyword>({
+const WeaponsprofileSchema: Schema = new mongoose.Schema<Weaponsprofile>({
     name: { type: String, required: true, minlength: 2 },
 }, { timestamps: true });
 
-export const KeywordModel = mongoose.model<Keyword>("Keyword", KeywordSchema);
+export const WeaponsprofileModel = mongoose.model<Weaponsprofile>("Weaponsprofile", WeaponsprofileSchema);
