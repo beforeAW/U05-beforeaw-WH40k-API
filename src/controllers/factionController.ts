@@ -1,69 +1,61 @@
 import { Request, Response } from "express";
 import { FactionModel } from "@models/factionModel";
-import { Faction } from "@schemas/factionSchema";
 
-export const createFaction = async (req: Request, res: Response) => {
+export const createFaction = async (req: Request, res: Response): Promise<void> => {
     try {
-        const { name}: Omit<Faction, "id"> = req.body;
-        if (!name) {
-            return res.status(400).json({ message: "All fields are required" });
-        }
-
+        const { name }: { name: string } = req.body;
         const newFaction = new FactionModel({ name });
         await newFaction.save();
-        
-        res.status(201).json({ message: "Faction created successfully", faction: newFaction });
+        res.status(201).json(newFaction);
     } catch (error) {
-        res.status(500).json({ message: "Internal Server Error" });
+        res.status(400).json({ error: (error as Error).message });
     }
 };
 
-export const getFactions = async (_req: Request, res: Response) => {
+export const getFactions = async (req: Request, res: Response): Promise<void> => {
     try {
         const factions = await FactionModel.find();
-        res.status(200).json(factions);
+        res.json(factions);
     } catch (error) {
-        res.status(500).json({ message: "Internal Server Error" });
+        res.status(500).json({ error: (error as Error).message });
     }
 };
 
-export const getFactionById = async (req: Request, res: Response) => {
+export const getFactionById = async (req: Request, res: Response): Promise<void> => {
     try {
         const faction = await FactionModel.findById(req.params.id);
         if (!faction) {
-            return res.status(404).json({ message: "Faction not found" });
+            res.status(404).json({ message: "Faction not found" });
+            return;
         }
-        res.status(200).json(faction);
+        res.json(faction);
     } catch (error) {
-        res.status(500).json({ message: "Internal Server Error" });
+        res.status(500).json({ error: (error as Error).message });
     }
 };
 
-export const updateFaction = async (req: Request, res: Response) => {
+export const updateFaction = async (req: Request, res: Response): Promise<void> => {
     try {
-        const { name }: Omit<Faction, "id"> = req.body;
-        if (!name) {
-            return res.status(400).json({ message: "All fields are required" });
+        const faction = await FactionModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        if (!faction) {
+            res.status(404).json({ message: "Faction not found" });
+            return;
         }
-        
-        const updatedFaction = await FactionModel.findByIdAndUpdate(req.params.id, { name}, { new: true });
-        if (!updatedFaction) {
-            return res.status(404).json({ message: "Faction not found" });
-        }
-        res.status(200).json(updatedFaction);
+        res.json(faction);
     } catch (error) {
-        res.status(500).json({ message: "Internal Server Error" });
+        res.status(500).json({ error: (error as Error).message });
     }
 };
 
-export const deleteFaction = async (req: Request, res: Response) => {
+export const deleteFaction = async (req: Request, res: Response): Promise<void> => {
     try {
-        const deletedFaction = await FactionModel.findByIdAndDelete(req.params.id);
-        if (!deletedFaction) {
-            return res.status(404).json({ message: "Faction not found" });
+        const faction = await FactionModel.findByIdAndDelete(req.params.id);
+        if (!faction) {
+            res.status(404).json({ message: "Faction not found" });
+            return;
         }
-        res.status(200).json({ message: "Faction deleted successfully" });
+        res.json({ message: "Faction deleted successfully" });
     } catch (error) {
-        res.status(500).json({ message: "Internal Server Error" });
+        res.status(500).json({ error: (error as Error).message });
     }
 };

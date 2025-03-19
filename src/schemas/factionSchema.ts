@@ -1,4 +1,5 @@
-export interface Faction {
-  id: string;
-  name: string;
+import { Document } from "mongoose";
+
+export interface Faction extends Document {
+    name: string;
 }
