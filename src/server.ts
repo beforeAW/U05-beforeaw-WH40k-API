@@ -1,6 +1,7 @@
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 import connectDB from "./database/db";
+import mainRoutes from "@routes/mainRoutes";
 
 dotenv.config();
 connectDB();
@@ -8,9 +9,13 @@ connectDB();
 const app: Express = express();
 const port = process.env.PORT || 3000;
 
+app.use(express.json()); 
+
 app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");
 });
+
+app.use("/api", mainRoutes);
 
 app.listen(port, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`);
