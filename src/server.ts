@@ -2,6 +2,7 @@ import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 import connectDB from "./database/db";
 import mainRoutes from "@routes/mainRoutes";
+import cors from "cors";
 
 dotenv.config();
 connectDB();
@@ -9,7 +10,8 @@ connectDB();
 const app: Express = express();
 const port = process.env.PORT || 3000;
 
-app.use(express.json()); 
+app.use(express.json());
+app.use(cors()); 
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");
