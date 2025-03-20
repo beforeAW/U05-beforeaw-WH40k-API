@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { AbilitiesModel } from "@models/abilitiesModel";
+import { AbilitiesModel } from "@models/units/abilitiesModel";
 
 export const createAbility = async (req: Request, res: Response): Promise<void> => {
     try {

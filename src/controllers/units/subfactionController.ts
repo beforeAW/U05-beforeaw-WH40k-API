@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { SubfactionModel } from "@models/subfactionModel";
+import { SubfactionModel } from "@models/units/subfactionModel";
 
 export const createSubfaction = async (req: Request, res: Response): Promise<void> => {
     try {

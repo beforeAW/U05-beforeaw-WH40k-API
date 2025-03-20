@@ -1,5 +1,5 @@
 import express from "express";
-import { createKeyword, getKeywords, getKeywordById, updateKeyword, deleteKeyword } from "@controllers/keywordController";
+import { createKeyword, getKeywords, getKeywordById, updateKeyword, deleteKeyword } from "@controllers/units/keywordController";
 
 
 const router = express.Router();

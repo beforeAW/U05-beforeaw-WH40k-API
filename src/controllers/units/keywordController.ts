@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { KeywordModel } from "@models/keywordModel";
+import { KeywordModel } from "@models/units/keywordModel";
 
 export const createKeyword = async (req: Request, res: Response): Promise<void> => {
     try {

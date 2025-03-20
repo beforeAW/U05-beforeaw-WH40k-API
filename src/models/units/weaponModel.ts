@@ -1,5 +1,5 @@
 import mongoose, { Schema, Types } from "mongoose";
-import { Weapon, WeaponType } from "@schemas/weaponSchema";
+import { Weapon, WeaponType } from "@schemas/units/weaponSchema";
 
 const WeaponSchema: Schema = new Schema({
     name: { type: String, required: true },

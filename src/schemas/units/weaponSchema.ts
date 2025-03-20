@@ -1,5 +1,5 @@
 import { Document, Types } from "mongoose";
-import { Weaponsprofile } from "@schemas/weaponsprofileSchema";
+import { Weaponsprofile } from "./weaponsprofileSchema";
 
 export enum WeaponType {
     Melee = "Melee",

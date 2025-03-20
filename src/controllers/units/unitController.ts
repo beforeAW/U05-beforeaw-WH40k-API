@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { UnitModel } from "@models/unitModel";
+import { UnitModel } from "@models/units/unitModel";
 
 export const createUnit = async (req: Request, res: Response): Promise<void> => {
     try {

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { FigureModel } from "@models/figureModel";
+import { FigureModel } from "@models/units/figureModel";
 
 export const createFigure = async (req: Request, res: Response): Promise<void> => {
     try {

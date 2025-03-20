@@ -1,5 +1,5 @@
 import express from "express";
-import { createSubfaction, getSubfactions, getSubfactionById, updateSubfaction, deleteSubfaction } from "@controllers/subfactionController";
+import { createSubfaction, getSubfactions, getSubfactionById, updateSubfaction, deleteSubfaction } from "@controllers/units/subfactionController";
 
 
 const router = express.Router();

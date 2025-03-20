@@ -1,5 +1,5 @@
 import express from "express";
-import { createFigure, getFigures, getFigureById, updateFigure, deleteFigure } from "@controllers/figureController";
+import { createFigure, getFigures, getFigureById, updateFigure, deleteFigure } from "@controllers/units/figureController";
 
 const router = express.Router();
 

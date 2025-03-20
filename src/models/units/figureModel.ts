@@ -1,5 +1,5 @@
 import mongoose, { Schema, Types } from "mongoose";
-import { Figure } from "@schemas/figureSchema";
+import { Figure } from "@schemas/units/figureSchema";
 
 const FigureSchema: Schema = new Schema({
     name: { type: String, required: true },

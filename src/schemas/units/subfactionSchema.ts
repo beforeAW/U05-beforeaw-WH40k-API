@@ -1,5 +1,5 @@
 import { Document, Types } from "mongoose";
-import { Faction } from "@schemas/factionSchema";
+import { Faction } from "./factionSchema";
 
 export interface Subfaction extends Document {
     name: string;

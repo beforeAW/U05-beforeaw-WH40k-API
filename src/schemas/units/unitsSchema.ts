@@ -1,7 +1,7 @@
 import { Document, Types } from "mongoose";
-import { Figure } from "@schemas/figureSchema";
-import { Faction } from "@schemas/factionSchema";
-import { Subfaction } from "@schemas/subfactionSchema";
+import { Figure } from "./figureSchema";
+import { Faction } from "./factionSchema";
+import { Subfaction } from "./subfactionSchema";
 import { Ability } from "./abilitiesSchema";
 import { Keyword } from "./keywordSchema";
 

@@ -1,5 +1,5 @@
 import express from "express";
-import { createFaction, getFactions, getFactionById, updateFaction, deleteFaction } from "@controllers/factionController";
+import { createFaction, getFactions, getFactionById, updateFaction, deleteFaction } from "@controllers/units/factionController";
 
 
 const router = express.Router();
