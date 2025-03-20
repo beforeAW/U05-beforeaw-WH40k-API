@@ -8,7 +8,7 @@ const WeaponSchema: Schema = new Schema({
     attacks: { type: Number, required: true },
     skill: { type: Number, required: true },
     strength: { type: Number, required: true },
-    armorPenetration: { type: Number, required: true },
+    armorPenetration: { type: Number, required: false },
     damage: { type: String, required: true },
     weaponprofile: { type: Types.ObjectId, ref: "Weapon", required: false },
 }, { timestamps: true });
