@@ -11,6 +11,3 @@ const UnitSchema: Schema = new Schema({
 }, { timestamps: true });
 
 export const UnitModel = mongoose.model<Unit>("Unit", UnitSchema);
-
-
-
