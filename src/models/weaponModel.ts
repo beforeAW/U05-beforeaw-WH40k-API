@@ -3,7 +3,7 @@ import { Weapon, WeaponType } from "@schemas/weaponSchema";
 
 const WeaponSchema: Schema = new Schema({
     name: { type: String, required: true },
-    type: { type: String, enum: Object.values(WeaponType), required: true }, // Use enum values here
+    type: { type: String, enum: Object.values(WeaponType), required: true },
     range: { type: String, required: true },
     attacks: { type: Number, required: true },
     skill: { type: Number, required: true },
