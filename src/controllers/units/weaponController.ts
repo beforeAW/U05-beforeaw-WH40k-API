@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { WeaponModel } from "@models/weaponModel";
+import { WeaponModel } from "@models/units/weaponModel";
 
 export const createWeapon = async (req: Request, res: Response): Promise<void> => {
     try {

@@ -1,5 +1,5 @@
 import { Document, Types } from "mongoose";
-import { Weapon } from "@schemas/weaponSchema";
+import { Weapon } from "./weaponSchema";
 
 
 export interface Figure extends Document {

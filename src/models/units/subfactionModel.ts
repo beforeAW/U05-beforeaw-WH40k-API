@@ -1,5 +1,5 @@
 import mongoose, { Schema, Types } from "mongoose";
-import { Subfaction } from "@schemas/subfactionSchema";
+import { Subfaction } from "@schemas/units/subfactionSchema";
 
 const SubfactionSchema: Schema = new Schema({
     name: { type: String, required: true },

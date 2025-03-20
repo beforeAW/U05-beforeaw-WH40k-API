@@ -1,5 +1,5 @@
 import mongoose, { Schema, Types } from "mongoose";
-import { Unit } from "@schemas/unitsSchema";
+import { Unit } from "@schemas/units/unitsSchema";
 
 const UnitSchema: Schema = new Schema({
     name: { type: String, required: true },

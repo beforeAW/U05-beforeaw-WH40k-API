@@ -1,5 +1,5 @@
 import express from "express";
-import { createAbility, getAbilities, getAbilityById, updateAbility, deleteAbility } from "@controllers/abilitiesController";
+import { createAbility, getAbilities, getAbilityById, updateAbility, deleteAbility } from "@controllers/units/abilitiesController";
 
 
 const router = express.Router();

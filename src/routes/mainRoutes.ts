@@ -1,12 +1,12 @@
 import express from "express";
-import abilitiesRoutes  from "./abilitiesRoutes";
-import figureRoutes from "./figureRoutes";
-import unitRoutes from "./unitRoutes";
-import keywordRoutes  from "./keywordRoutes";
-import factionRoutes  from "./factionRoutes";
-import subfactionRoutes  from "./subfactionRoutes";
-import weaponRoutes from "./weaponRoutes";
-import weaponsprofileRoutes from "./weaponsprofileRoutes";
+import abilitiesRoutes  from "./units/abilitiesRoutes";
+import figureRoutes from "./units/figureRoutes";
+import unitRoutes from "./units/unitRoutes";
+import keywordRoutes  from "./units/keywordRoutes";
+import factionRoutes  from "./units/factionRoutes";
+import subfactionRoutes  from "./units/subfactionRoutes";
+import weaponRoutes from "./units/weaponRoutes";
+import weaponsprofileRoutes from "./units/weaponsprofileRoutes";
 
 const router = express.Router();
 

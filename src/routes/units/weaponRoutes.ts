@@ -1,5 +1,5 @@
 import express from "express";
-import { createWeapon, getWeapons, getWeaponById, updateWeapon, deleteWeapon } from "@controllers/weaponController";
+import { createWeapon, getWeapons, getWeaponById, updateWeapon, deleteWeapon } from "@controllers/units/weaponController";
 
 const router = express.Router();
 

@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-import { Ability } from "@schemas/abilitiesSchema";
+import { Ability } from "@schemas/units/abilitiesSchema";
 
 const AbiltiesSchema: Schema = new mongoose.Schema<Ability>({
     name: { type: String, required: true, minlength: 2 },

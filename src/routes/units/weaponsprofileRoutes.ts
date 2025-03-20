@@ -1,5 +1,5 @@
 import express from "express";
-import { createWeaponsprofile, getWeaponsprofile, getWeaponsprofileById, updateWeaponsprofile, deleteWeaponsprofile } from "@controllers/weaponsprofileController";
+import { createWeaponsprofile, getWeaponsprofile, getWeaponsprofileById, updateWeaponsprofile, deleteWeaponsprofile } from "@controllers/units/weaponsprofileController";
 
 
 const router = express.Router();
