@@ -9,5 +9,5 @@ export interface User extends Document {
     email: string;
     password: string;
     username: string;
-    role: UserType;
+    roles: UserType;
 }
