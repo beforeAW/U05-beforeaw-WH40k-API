@@ -11,5 +11,5 @@ export interface Figure extends Document {
     leadership: number;
     oc: number;
     invurnerableSave: number;
-    weapon: Types.ObjectId | Weapon;
+    weapon: Types.ObjectId[] | Weapon[];
 }
