@@ -1,8 +1,8 @@
 import { Document } from "mongoose";
 
 export enum UserType {
-  Member = "Member",
-  Admin = "Admin",
+  Member = "member",
+  Admin = "admin",
 }
 
 export interface User extends Document {
