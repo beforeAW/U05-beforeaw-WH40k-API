@@ -7,11 +7,12 @@ interface AuthRequest extends Request {
     user?: { id: string; roles: string };
 }
 
-export const authenticateUser = (req: AuthRequest, res: Response, next: NextFunction) => {
+export const authenticateUser = (req: AuthRequest, res: Response, next: NextFunction): void => {
     const token = req.header("Authorization")?.split(" ")[1];
 
     if (!token) {
-        return res.status(401).json({ message: "Access denied. No token provided." });
+      res.status(401).json({ message: "Access denied. No token provided." });
+      return; 
     }
 
     try {
@@ -24,9 +25,10 @@ export const authenticateUser = (req: AuthRequest, res: Response, next: NextFunc
 };
 
 export const authorizeRoles = (roles: string[]) => {
-    return (req: AuthRequest, res: Response, next: NextFunction) => {
+    return (req: AuthRequest, res: Response, next: NextFunction): void => {
         if (!req.user || !roles.includes(req.user.roles)) {
-            return res.status(403).json({ message: "Access denied. Insufficient permissions." });
+          res.status(403).json({ message: "Access denied. Insufficient permissions." });
+          return; // Ensure the function ends here
         }
         next();
     };
