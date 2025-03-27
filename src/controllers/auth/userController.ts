@@ -1,17 +1,6 @@
 import { Request, Response } from "express";
 import { UserModel } from "@models/auth/userModel";
 
-export const createUser = async (req: Request, res: Response): Promise<void> => {
-    try {
-        const { username, email, password, roles }: { username: string; email: string; password: string; roles: string } = req.body;
-        const newUser = new UserModel({ username, email, password, roles });
-        await newUser.save();
-        res.status(201).json(newUser);
-    } catch (error) {
-        res.status(400).json({ error: (error as Error).message });
-    }
-};
-
 export const getUser = async (req: Request, res: Response): Promise<void> => {
     try {
         const users = await UserModel.find();
