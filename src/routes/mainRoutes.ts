@@ -7,6 +7,8 @@ import factionRoutes  from "./units/factionRoutes";
 import subfactionRoutes  from "./units/subfactionRoutes";
 import weaponRoutes from "./units/weaponRoutes";
 import weaponsprofileRoutes from "./units/weaponsprofileRoutes";
+import authRoutes from "./auth/authRoutes";
+import userRoutes from "./auth/userRoutes";
 
 const router = express.Router();
 
@@ -18,5 +20,7 @@ router.use("/factions", factionRoutes);
 router.use("/subfactions", subfactionRoutes);
 router.use("/weapons", weaponRoutes);
 router.use("/weaponsprofiles", weaponsprofileRoutes);
+router.use("/auth", authRoutes);
+router.use("/users", userRoutes);
 
 export default router;
