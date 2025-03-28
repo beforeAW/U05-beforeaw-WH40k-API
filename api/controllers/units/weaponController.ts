@@ -23,7 +23,7 @@ export const createWeaponsBulk = async (req: Request, res: Response): Promise<vo
 
 export const getWeapons = async (req: Request, res: Response): Promise<void> => {
     try {
-        const weapons = await WeaponModel.find().populate("weaponsprofile");
+        const weapons = await WeaponModel.find().populate("weaponsprofile", "name");
         res.json(weapons);
     } catch (error) {
         res.status(500).json({ error: (error as Error).message });
