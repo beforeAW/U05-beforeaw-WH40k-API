@@ -117,7 +117,6 @@ export interface User extends Document {
 | Update unit | `/units/{id}` | Update an existing unit |
 | Delete unit | `/units/{id}` | Delete a unit |
 | Search units | `/units/search` | Search for units by criteria |
-| Paginate units | `/units/paginate` | Get paginated unit results |
 
 ### **Weapons**  
 | Resource | URI Format | Description |
