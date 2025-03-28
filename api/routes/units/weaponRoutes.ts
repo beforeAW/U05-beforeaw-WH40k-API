@@ -1,14 +1,14 @@
 import express from "express";
 import { createWeapon, createWeaponsBulk, getWeapons, getWeaponById, updateWeapon, deleteWeapon } from "../../controllers/units/weaponController";
-import { authenticateUser, authorizeRoles } from "../../middlewares/authMiddleware";
+// import { authenticateUser, authorizeRoles } from "../../middlewares/authMiddleware";
 
 const router = express.Router();
 
 router.get("/", getWeapons);
 router.get("/:id", getWeaponById);
-router.post("/", authenticateUser, authorizeRoles(["admin"]), createWeapon);
-router.post("/bulk", authenticateUser, authorizeRoles(["admin"]), createWeaponsBulk);
-router.put("/:id", authenticateUser, authorizeRoles(["admin"]), updateWeapon);
-router.delete("/:id", authenticateUser, authorizeRoles(["admin"]), deleteWeapon);
+router.post("/", createWeapon);
+router.post("/bulk", createWeaponsBulk);
+router.put("/:id", updateWeapon);
+router.delete("/:id", deleteWeapon);
 
 export default router;

@@ -6,9 +6,9 @@ const router = express.Router();
 
 router.get("/", getFactions);
 router.get("/:id", getFactionById);
-router.post("/", authenticateUser, authorizeRoles(["admin"]), createFaction);
-router.post("/bulk", authenticateUser, authorizeRoles(["admin"]), createFactionsBulk);
-router.put("/:id", authenticateUser, authorizeRoles(["admin"]), updateFaction);
-router.delete("/:id", authenticateUser, authorizeRoles(["admin"]), deleteFaction);
+router.post("/", createFaction);
+router.post("/bulk", createFactionsBulk);
+router.put("/:id", updateFaction);
+router.delete("/:id", deleteFaction);
 
 export default router;
