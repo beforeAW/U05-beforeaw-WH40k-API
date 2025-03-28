@@ -67,22 +67,6 @@ export interface Ability extends Document {
     description: string;
 }
 ```
-
-### **User**
-```typescript
-export enum UserType {
-  User = "user",
-  Admin = "admin",
-}
-
-export interface User extends Document {
-    email: string;
-    password: string;
-    username: string;
-    roles: UserType;
-}
-```
-
 ---
 
 ### Resource URIs
@@ -199,7 +183,6 @@ Example how you can use json for dummydata
     "email": "user@example.com",
     "password": "securepassword",
     "username": "warrior42",
-    "roles": "admin"
 }
 ```
 
