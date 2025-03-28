@@ -31,6 +31,45 @@ This API will provide a comprehensive database of all Warhammer 40K figures, off
 
 ### Object Modeling
 
+Some examples of object modeling:
+
+### **Unit**
+```typescript
+export interface Unit extends Document {
+    name: string;
+    figure: Types.ObjectId[] | Figure[];
+    faction: Types.ObjectId | Faction;
+    subfaction: Types.ObjectId | Subfaction;
+    abilities: Types.ObjectId[] | Ability[];
+    keywords: Types.ObjectId[] | Keyword[];
+}
+```
+
+### **Ability**
+```typescript
+export interface Ability extends Document {
+    name: string;
+    description: string;
+}
+```
+
+### **User**
+```typescript
+export enum UserType {
+  User = "user",
+  Admin = "admin",
+}
+
+export interface User extends Document {
+    email: string;
+    password: string;
+    username: string;
+    roles: UserType;
+}
+```
+
+---
+
 ### Resource URIs
 
 ### **Factions**  
