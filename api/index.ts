@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cors()); 
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("Express + TypeScript Server");
+  res.send("WH40k API");
 });
 
 app.use("/api", mainRoutes);
