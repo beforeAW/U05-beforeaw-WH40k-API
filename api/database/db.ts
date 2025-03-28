@@ -4,8 +4,8 @@ async function connectDB() {
   try {
     const URL =
       process.env.NODE_ENV === "prod"
-        ? process.env.MONGO_URI_LOCAL || "mongodb://127.0.0.1:27017/mongoose-example"
-        : process.env.MONGO_URI_PROD || "";
+        ? process.env.MONGO_URI_PROD || ""
+        : process.env.MONGO_URI_LOCAL || "mongodb://127.0.0.1:27017/mongoose-example";
 
     if (!URL) {
       throw new Error("MongoDB connection URL is not defined.");
