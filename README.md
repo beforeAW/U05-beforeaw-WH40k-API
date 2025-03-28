@@ -33,315 +33,243 @@ This API will provide a comprehensive database of all Warhammer 40K figures, off
 
 ### Resource URIs
 
-<table>
-  <tr>
-    <th>Resurs</th>
-    <th>URI-format</th>
-    <th>Description:</th>
-  </tr>
-  <tr>
-    <td>Factions</td>
-    <td>/factions</td>
-    <td>Get all factions</td>
-  </tr>
-  <tr>
-    <td>Faction</td>
-    <td>/factions/{id}</td>
-    <td>Get a specific faction</td>
-  </tr>
-  <tr>
-    <td>Subfactions</td>
-    <td>/factions/subfactions</td>
-    <td>Get all subfactions</td>
-  </tr>
-  <tr>
-    <td>Subfaction</td>
-    <td>/factions/subfactions/{id}</td>
-    <td>Get a specific subfaction</td>
-  </tr>
-  <tr>
-    <td>Units</td>
-    <td>/units</td>
-    <td>Get all units</td>
-  </tr>
-  <tr>
-    <td>Unit</td>
-    <td>/units/{id}</td>
-    <td>Get a specific unit</td>
-  </tr>
-    <tr>
-    <td>Weaponsprofiles</td>
-    <td>/weaponsprofiles</td>
-    <td>Get all weaponsprofiles</td>
-  </tr>
-    <tr>
-    <td>Weaponsprofile</td>
-    <td>/weaponsprofiles/{id}</td>
-    <td>Get a specific weaponsprofile</td>
-  </tr>
-  <tr>
-    <td>Meleeweapons</td>
-    <td>/meleeweapons</td>
-    <td>Get all meleeweapons</td>
-  </tr>
-  <tr>
-    <td>Meleeweapon</td>
-    <td>/meleeweapons/{id}</td>
-    <td>Get a specific meleeweapon</td>
-  </tr>
-  <tr>
-    <td>Rangedweapons</td>
-    <td>/rangedweapons</td>
-    <td>Get all rangedweapons</td>
-  </tr>
-    <tr>
-    <td>Rangedweapon</td>
-    <td>/rangedweapons/{id}</td>
-    <td>Get a specific rangedweapon</td>
-  </tr>
-    <tr>
-    <td>Abilities</td>
-    <td>/abilities</td>
-    <td>Get all abilities</td>
-  </tr>
-    <tr>
-    <td>Ability</td>
-    <td>/abilities/{id}</td>
-    <td>Get a specific ability</td>
-  </tr>
-    <tr>
-    <td>Keywords</td>
-    <td>/keywords</td>
-    <td>Get all keywords</td>
-  </tr>
-  <tr>
-    <td>Keyword</td>
-    <td>/keywords/{id}</td>
-    <td>Get a specific keyword</td>
-  </tr>
-</table>
+### **Factions**  
+| Resource | URI Format | Description |
+|----------|-----------|-------------|
+| All factions | `/factions` | Get all factions |
+| Specific faction | `/factions/{id}` | Get a specific faction |
+| Create faction | `/factions` | Create a new faction |
+| Create factions in bulk | `/factions/bulk` | Create multiple factions at once |
+| Update faction | `/factions/{id}` | Update an existing faction |
+| Delete faction | `/factions/{id}` | Delete a faction |
+
+### **Subfactions**  
+| Resource | URI Format | Description |
+|----------|-----------|-------------|
+| All subfactions | `/subfactions` | Get all subfactions |
+| Specific subfaction | `/subfactions/{id}` | Get a specific subfaction |
+| Create subfaction | `/subfactions` | Create a new subfaction |
+| Create subfactions in bulk | `/subfactions/bulk` | Create multiple subfactions at once |
+| Update subfaction | `/subfactions/{id}` | Update an existing subfaction |
+| Delete subfaction | `/subfactions/{id}` | Delete a subfaction |
+
+### **Units**  
+| Resource | URI Format | Description |
+|----------|-----------|-------------|
+| All units | `/units` | Get all units |
+| Specific unit | `/units/{id}` | Get a specific unit |
+| Create unit | `/units` | Create a new unit |
+| Create units in bulk | `/units/bulk` | Create multiple units at once |
+| Update unit | `/units/{id}` | Update an existing unit |
+| Delete unit | `/units/{id}` | Delete a unit |
+| Search units | `/units/search` | Search for units by criteria |
+| Paginate units | `/units/paginate` | Get paginated unit results |
+
+### **Weapons**  
+| Resource | URI Format | Description |
+|----------|-----------|-------------|
+| All weapons | `/weapons` | Get all weapons |
+| Specific weapon | `/weapons/{id}` | Get a specific weapon |
+| Create weapon | `/weapons` | Create a new weapon |
+| Create weapons in bulk | `/weapons/bulk` | Create multiple weapons at once |
+| Update weapon | `/weapons/{id}` | Update an existing weapon |
+| Delete weapon | `/weapons/{id}` | Delete a weapon |
+
+### **Weapon Profiles**  
+| Resource | URI Format | Description |
+|----------|-----------|-------------|
+| All weapon profiles | `/weapon-profiles` | Get all weapon profiles |
+| Specific weapon profile | `/weapon-profiles/{id}` | Get a specific weapon profile |
+| Create weapon profile | `/weapon-profiles` | Create a new weapon profile |
+| Create weapon profiles in bulk | `/weapon-profiles/bulk` | Create multiple weapon profiles at once |
+| Update weapon profile | `/weapon-profiles/{id}` | Update an existing weapon profile |
+| Delete weapon profile | `/weapon-profiles/{id}` | Delete a weapon profile |
+
+### **Abilities**  
+| Resource | URI Format | Description |
+|----------|-----------|-------------|
+| All abilities | `/abilities` | Get all abilities |
+| Specific ability | `/abilities/{id}` | Get a specific ability |
+| Create ability | `/abilities` | Create a new ability |
+| Create abilities in bulk | `/abilities/bulk` | Create multiple abilities at once |
+| Update ability | `/abilities/{id}` | Update an existing ability |
+| Delete ability | `/abilities/{id}` | Delete an ability |
+
+### **Keywords**  
+| Resource | URI Format | Description |
+|----------|-----------|-------------|
+| All keywords | `/keywords` | Get all keywords |
+| Specific keyword | `/keywords/{id}` | Get a specific keyword |
+| Create keyword | `/keywords` | Create a new keyword |
+| Create keywords in bulk | `/keywords/bulk` | Create multiple keywords at once |
+| Update keyword | `/keywords/{id}` | Update an existing keyword |
+| Delete keyword | `/keywords/{id}` | Delete a keyword |
+
+### **User Management**  
+| Resource | URI Format | Description |
+|----------|-----------|-------------|
+| Register user | `/auth/register` | Register a new user |
+| Login user | `/auth/login` | Login a user |
+| Get all users (Admin only) | `/users` | Retrieve all users |
+| Get paginated users (Admin only) | `/users/paginate` | Retrieve paginated user results |
+| Specific user | `/users/{id}` | Get a specific user |
+| Update user (Admin only) | `/users/{id}` | Update user information |
+| Delete user (Admin only) | `/users/{id}` | Delete a user |
 
 ### Resource Representations
 
+Example how you can use json for dummydata
+
+### **Unit**
+```json
+{
+    "name": "Space Marine",
+    "figure": ["60d21b4667d0d8992e610c85"],
+    "faction": "60d21b4967d0d8992e610c86",
+    "subfaction": "60d21b4b67d0d8992e610c87",
+    "abilities": ["60d21b4e67d0d8992e610c88"],
+    "keywords": ["Infantry", "Core"]
+}
+```
+
+### **Ability**
+```json
+{
+    "name": "Bolter Discipline",
+    "description": "Allows a unit to fire twice if it remains stationary."
+}
+```
+
+### **User**
+```json
+{
+    "email": "user@example.com",
+    "password": "securepassword",
+    "username": "warrior42",
+    "roles": "admin"
+}
+```
+
+---
 ### Assigning HTTP Methods
 
-<table>
-  <tr>
-      <th>Resource</th>
-      <th>URI Format</th>
-      <th>HTTP Method</th>
-      <th>Description</th>
-  </tr>
-  <tr>
-      <td>Factions</td>
-      <td>/factions</td>
-      <td>GET</td>
-      <td>Get all factions</td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>/factions</td>
-      <td>POST</td>
-      <td>Create a new faction</td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>/factions/{id}</td>
-      <td>GET</td>
-      <td>Get a specific faction</td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>/factions/{id}</td>
-      <td>PUT</td>
-      <td>Update an existing faction</td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>/factions/{id}</td>
-      <td>DELETE</td>
-      <td>Delete a faction</td>
-  </tr>
-  <tr>
-      <td>Subfactions</td>
-      <td>/factions/subfactions</td>
-      <td>GET</td>
-      <td>Get all subfactions</td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>/factions/subfactions</td>
-      <td>POST</td>
-      <td>Create a new subfaction</td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>/factions/subfactions/{id}</td>
-      <td>GET</td>
-      <td>Get a specific subfaction</td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>/factions/subfactions/{id}</td>
-      <td>PUT</td>
-      <td>Update an existing subfaction</td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>/factions/subfactions/{id}</td>
-      <td>DELETE</td>
-      <td>Delete a subfaction</td>
-  </tr>
-  <tr>
-      <td>Units</td>
-      <td>/units</td>
-      <td>GET</td>
-      <td>Get all units</td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>/units</td>
-      <td>POST</td>
-      <td>Create a new unit</td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>/units/{id}</td>
-      <td>GET</td>
-      <td>Get a specific unit</td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>/units/{id}</td>
-      <td>PUT</td>
-      <td>Update an existing unit</td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>/units/{id}</td>
-      <td>DELETE</td>
-      <td>Delete a unit</td>
-  </tr>
-  <tr>
-      <td>Weaponsprofiles</td>
-      <td>/weaponsprofiles</td>
-      <td>GET</td>
-      <td>Get all weapons profiles</td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>/weaponsprofiles</td>
-      <td>POST</td>
-      <td>Create a new weapons profile</td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>/weaponsprofiles/{id}</td>
-      <td>GET</td>
-      <td>Get a specific weapons profile</td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>/weaponsprofiles/{id}</td>
-      <td>PUT</td>
-      <td>Update an existing weapons profile</td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>/weaponsprofiles/{id}</td>
-      <td>DELETE</td>
-      <td>Delete a weapons profile</td>
-  </tr>
-  <tr>
-      <td>Meleeweapons</td>
-      <td>/meleeweapons</td>
-      <td>GET</td>
-      <td>Get all melee weapons</td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>/meleeweapons</td>
-      <td>POST</td>
-      <td>Create a new melee weapon</td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>/meleeweapons/{id}</td>
-      <td>GET</td>
-      <td>Get a specific melee weapon</td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>/meleeweapons/{id}</td>
-      <td>PUT</td>
-      <td>Update an existing melee weapon</td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>/meleeweapons/{id}</td>
-      <td>DELETE</td>
-      <td>Delete a melee weapon</td>
-  </tr>
-  <tr>
-      <td>Rangedweapons</td>
-      <td>/rangedweapons</td>
-      <td>GET</td>
-      <td>Get all ranged weapons</td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>/rangedweapons</td>
-      <td>POST</td>
-      <td>Create a new ranged weapon</td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>/rangedweapons/{id}</td>
-      <td>GET</td>
-      <td>Get a specific ranged weapon</td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>/rangedweapons/{id}</td>
-      <td>PUT</td>
-      <td>Update an existing ranged weapon</td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>/rangedweapons/{id}</td>
-      <td>DELETE</td>
-      <td>Delete a ranged weapon</td>
-  </tr>
-  <tr>
-      <td>Abilities</td>
-      <td>/abilities</td>
-      <td>GET</td>
-      <td>Get all abilities</td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>/abilities</td>
-      <td>POST</td>
-      <td>Create a new ability</td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>/abilities/{id}</td>
-      <td>GET</td>
-      <td>Get a specific ability</td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>/abilities/{id}</td>
-      <td>PUT</td>
-      <td>Update an existing ability</td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>/abilities/{id}</td>
-      <td>DELETE</td>
-      <td>Delete an ability</td>
-  </tr>
-</table>
+### **Factions**
+```http
+GET /factions
+POST /factions
+GET /factions/{id}
+PUT /factions/{id}
+DELETE /factions/{id}
+```
+
+### **Subfactions**
+```http
+GET /subfactions
+POST /subfactions
+GET /subfactions/{id}
+PUT /subfactions/{id}
+DELETE /subfactions/{id}
+```
+
+### **Units**
+```http
+GET /units
+POST /units
+GET /units/{id}
+PUT /units/{id}
+DELETE /units/{id}
+GET /units?name=value
+```
+
+### **Weapons**
+```http
+GET /weapons
+POST /weapons
+GET /weapons/{id}
+PUT /weapons/{id}
+DELETE /weapons/{id}
+```
+
+### **Weapon Profiles**
+```http
+GET /weapon-profiles
+POST /weapon-profiles
+GET /weapon-profiles/{id}
+PUT /weapon-profiles/{id}
+DELETE /weapon-profiles/{id}
+```
+
+### **Abilities**
+```http
+GET /abilities
+POST /abilities
+GET /abilities/{id}
+PUT /abilities/{id}
+DELETE /abilities/{id}
+```
+
+### **Keywords**
+```http
+GET /keywords
+POST /keywords
+GET /keywords/{id}
+PUT /keywords/{id}
+DELETE /keywords/{id}
+```
+
+### **User Management**
+```http
+POST /auth/register
+POST /auth/login
+GET /users
+GET /users/{id}
+PUT /users/{id}
+DELETE /users/{id}
+```
+
+---
 
 ## cURL commands
+
+some dummydata cURL commands 
+
+### **Get All Factions**
+```sh
+curl -X GET http://localhost:3000/factions
+```
+
+### **Get a Specific Unit**
+```sh
+curl -X GET http://localhost:3000/units/12345
+```
+
+### **Create a New Weapon**
+```sh
+curl -X POST http://localhost:3000/weapons \
+     -H "Content-Type: application/json" \
+     -d '{"name": "Boltgun", "type": "ranged", "damage": "D6"}'
+```
+
+### **Update an Ability**
+```sh
+curl -X PUT http://localhost:3000/abilities/6789 \
+     -H "Content-Type: application/json" \
+     -d '{"name": "Fearless"}'
+```
+
+### **Delete a Keyword**
+```sh
+curl -X DELETE http://localhost:3000/keywords/4567
+```
+
+### **Search for Units**
+```sh
+curl -X GET "http://localhost:3000/units/search?name=Space Marine"
+```
+
+### **Paginate Users**
+```sh
+curl -X GET "http://localhost:3000/users/paginate?page=1&limit=10"
+```
+
+---
