@@ -12,6 +12,15 @@ export const createWeapon = async (req: Request, res: Response): Promise<void> =
     }
 };
 
+export const createWeaponsBulk = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const newWeapons = await WeaponModel.insertMany(req.body);
+        res.status(201).json(newWeapons);
+    } catch (error) {
+        res.status(400).json({ error: (error as Error).message });
+    }
+};
+
 export const getWeapons = async (req: Request, res: Response): Promise<void> => {
     try {
         const weapons = await WeaponModel.find().populate("weaponsprofile");

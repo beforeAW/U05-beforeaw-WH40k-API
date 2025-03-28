@@ -12,6 +12,16 @@ export const createSubfaction = async (req: Request, res: Response): Promise<voi
     }
 };
 
+export const createSubfactionsBulk = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const newSubfactions = await SubfactionModel.insertMany(req.body);
+        res.status(201).json(newSubfactions);
+    } catch (error) {
+        res.status(400).json({ error: (error as Error).message });
+    }
+};
+
+
 export const getSubfactions = async (req: Request, res: Response): Promise<void> => {
     try {
         const subfactions = await SubfactionModel.find().populate("faction");
