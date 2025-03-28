@@ -12,6 +12,15 @@ export const createAbility = async (req: Request, res: Response): Promise<void> 
     }
 };
 
+export const createAbilitiesBulk = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const newAbilities = await AbilitiesModel.insertMany(req.body);
+        res.status(201).json(newAbilities);
+    } catch (error) {
+        res.status(400).json({ error: (error as Error).message });
+    }
+};
+
 export const getAbilities = async (req: Request, res: Response): Promise<void> => {
     try {
         const abilities = await AbilitiesModel.find();

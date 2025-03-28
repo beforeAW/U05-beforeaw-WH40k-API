@@ -12,6 +12,16 @@ export const createKeyword = async (req: Request, res: Response): Promise<void> 
     }
 };
 
+export const createKeywordsBulk = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const newKeywords = await KeywordModel.insertMany(req.body);
+        res.status(201).json(newKeywords);
+    } catch (error) {
+        res.status(400).json({ error: (error as Error).message });
+    }
+};
+
+
 export const getKeywords = async (req: Request, res: Response): Promise<void> => {
     try {
         const keywords = await KeywordModel.find();

@@ -12,6 +12,15 @@ export const createFaction = async (req: Request, res: Response): Promise<void> 
     }
 };
 
+export const createFactionsBulk = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const newFactions = await FactionModel.insertMany(req.body);
+        res.status(201).json(newFactions);
+    } catch (error) {
+        res.status(400).json({ error: (error as Error).message });
+    }
+};
+
 export const getFactions = async (req: Request, res: Response): Promise<void> => {
     try {
         const factions = await FactionModel.find();

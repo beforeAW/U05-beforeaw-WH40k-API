@@ -23,6 +23,26 @@ export const getUserById = async (req: Request, res: Response): Promise<void> =>
     }
 };
 
+export const getUsersPaginate = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const page = parseInt(req.query.page as string) || 1;
+        const limit = parseInt(req.query.limit as string) || 10;
+        const skip = (page - 1) * limit;
+
+        const users = await UserModel.find().limit(limit).skip(skip);
+        const totalCount = await UserModel.countDocuments();
+
+        res.json({
+            totalCount,
+            totalPages: Math.ceil(totalCount / limit),
+            currentPage: page,
+            users,
+        });
+    } catch (error) {
+        res.status(500).json({ error: (error as Error).message });
+    }
+};
+
 export const updateUser = async (req: Request, res: Response): Promise<void> => {
     try {
         const user = await UserModel.findByIdAndUpdate(req.params.id, req.body, { new: true });

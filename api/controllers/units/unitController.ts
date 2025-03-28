@@ -12,7 +12,6 @@ export const createUnit = async (req: Request, res: Response): Promise<void> => 
     }
 };
 
-// Get all units
 export const getUnits = async (req: Request, res: Response): Promise<void> => {
     try {
         const units = await UnitModel.find().populate("figure faction subfaction abilities keywords");
@@ -56,6 +55,24 @@ export const deleteUnit = async (req: Request, res: Response): Promise<void> => 
             return;
         }
         res.json({ message: "Unit deleted successfully" });
+    } catch (error) {
+        res.status(500).json({ error: (error as Error).message });
+    }
+};
+
+export const searchUnits = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const { name } = req.query;
+
+        if (!name) {
+            res.status(400).json({ message: "Name is required" });
+            return;
+        }
+
+        const units = await UnitModel.find({ name: { $regex: name as string, $options: "i" } }).populate(
+            "figure faction subfaction abilities keywords"
+        );
+        res.json(units);
     } catch (error) {
         res.status(500).json({ error: (error as Error).message });
     }

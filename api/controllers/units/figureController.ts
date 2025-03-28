@@ -12,6 +12,16 @@ export const createFigure = async (req: Request, res: Response): Promise<void> =
     }
 };
 
+export const createFiguresBulk = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const newFigures = await FigureModel.insertMany(req.body);
+        res.status(201).json(newFigures);
+    } catch (error) {
+        res.status(400).json({ error: (error as Error).message });
+    }
+};
+
+
 export const getFigures = async (req: Request, res: Response): Promise<void> => {
     try {
         const figures = await FigureModel.find().populate("weapon");
@@ -55,6 +65,22 @@ export const deleteFigure = async (req: Request, res: Response): Promise<void> =
             return;
         }
         res.json({ message: "Figure deleted successfully" });
+    } catch (error) {
+        res.status(500).json({ error: (error as Error).message });
+    }
+};
+
+export const searchFigures = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const { name } = req.query;
+
+        if (!name) {
+            res.status(400).json({ message: "Name is required" });
+            return;
+        }
+
+        const figures = await FigureModel.find({ name: { $regex: name as string, $options: "i" } }).populate("weapon");
+        res.json(figures);
     } catch (error) {
         res.status(500).json({ error: (error as Error).message });
     }
