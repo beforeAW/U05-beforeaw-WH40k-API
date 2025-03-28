@@ -21,10 +21,9 @@ export const createSubfactionsBulk = async (req: Request, res: Response): Promis
     }
 };
 
-
 export const getSubfactions = async (req: Request, res: Response): Promise<void> => {
     try {
-        const subfactions = await SubfactionModel.find().populate("faction");
+        const subfactions = await SubfactionModel.find().populate("faction", "name");
         res.json(subfactions);
     } catch (error) {
         res.status(500).json({ error: (error as Error).message });
@@ -33,7 +32,7 @@ export const getSubfactions = async (req: Request, res: Response): Promise<void>
 
 export const getSubfactionById = async (req: Request, res: Response): Promise<void> => {
     try {
-        const subfaction = await SubfactionModel.findById(req.params.id).populate("faction");
+        const subfaction = await SubfactionModel.findById(req.params.id).populate("faction", "name");
         if (!subfaction) {
             res.status(404).json({ message: "Subfaction not found" });
             return;
@@ -46,7 +45,7 @@ export const getSubfactionById = async (req: Request, res: Response): Promise<vo
 
 export const updateSubfaction = async (req: Request, res: Response): Promise<void> => {
     try {
-        const subfaction = await SubfactionModel.findByIdAndUpdate(req.params.id, req.body, { new: true }).populate("faction");
+        const subfaction = await SubfactionModel.findByIdAndUpdate(req.params.id, req.body, { new: true }).populate("faction", "name");
         if (!subfaction) {
             res.status(404).json({ message: "Subfaction not found" });
             return;

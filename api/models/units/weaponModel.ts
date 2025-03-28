@@ -10,7 +10,7 @@ const WeaponSchema: Schema = new Schema({
     strength: { type: Number, required: true },
     armorPenetration: { type: Number, required: false },
     damage: { type: String, required: true },
-    weaponprofile: { type: Types.ObjectId, ref: "Weapon", required: false },
+    weaponsprofile: { type: Types.ObjectId, ref: "Weaponsprofile", required: false },
 }, { timestamps: true });
 
 export const WeaponModel = mongoose.model<Weapon>("Weapon", WeaponSchema);

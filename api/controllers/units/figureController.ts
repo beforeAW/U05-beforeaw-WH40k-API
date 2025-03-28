@@ -72,16 +72,25 @@ export const deleteFigure = async (req: Request, res: Response): Promise<void> =
 
 export const searchFigures = async (req: Request, res: Response): Promise<void> => {
     try {
-        const { name } = req.query;
+        // Extract query parameters
+        const { name, movement, toughness, saves, wounds, leadership, oc, invurnerableSave } = req.query;
 
-        if (!name) {
-            res.status(400).json({ message: "Name is required" });
-            return;
-        }
+        // Build a dynamic filter object
+        const filter: any = {};
+        if (name) filter.name = { $regex: name, $options: "i" }; // Case-insensitive search
+        if (movement) filter.movement = Number(movement);
+        if (toughness) filter.toughness = Number(toughness);
+        if (saves) filter.saves = Number(saves);
+        if (wounds) filter.wounds = Number(wounds);
+        if (leadership) filter.leadership = Number(leadership);
+        if (oc) filter.oc = Number(oc);
+        if (invurnerableSave) filter.invurnerableSave = Number(invurnerableSave);
 
-        const figures = await FigureModel.find({ name: { $regex: name as string, $options: "i" } }).populate("weapon");
+        // Query the database with the filter
+        const figures = await FigureModel.find(filter).populate("weapon");
         res.json(figures);
     } catch (error) {
+        console.error("Error searching figures:", error);
         res.status(500).json({ error: (error as Error).message });
     }
 };
