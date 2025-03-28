@@ -288,41 +288,41 @@ some dummydata cURL commands
 
 ### **Get All Factions**
 ```sh
-curl -X GET http://localhost:3000/factions
+curl -X GET http://localhost:3000/api/factions
 ```
 
 ### **Get a Specific Unit**
 ```sh
-curl -X GET http://localhost:3000/units/12345
+curl -X GET http://localhost:3000/api/units/12345
 ```
 
 ### **Create a New Weapon**
 ```sh
-curl -X POST http://localhost:3000/weapons \
+curl -X POST http://localhost:3000/api/weapons \
      -H "Content-Type: application/json" \
      -d '{"name": "Boltgun", "type": "ranged", "damage": "D6"}'
 ```
 
 ### **Update an Ability**
 ```sh
-curl -X PUT http://localhost:3000/abilities/6789 \
+curl -X PUT http://localhost:3000/api/abilities/6789 \
      -H "Content-Type: application/json" \
      -d '{"name": "Fearless"}'
 ```
 
 ### **Delete a Keyword**
 ```sh
-curl -X DELETE http://localhost:3000/keywords/4567
+curl -X DELETE http://localhost:3000/api/keywords/4567
 ```
 
 ### **Search for Units**
 ```sh
-curl -X GET "http://localhost:3000/units/search?name=Space Marine"
+curl -X GET "http://localhost:3000/api/units/search?name=Space Marine"
 ```
 
 ### **Paginate Users**
 ```sh
-curl -X GET "http://localhost:3000/users/paginate?page=1&limit=10"
+curl -X GET "http://localhost:3000/api/users/paginate?page=1&limit=10"
 ```
 
 ---
