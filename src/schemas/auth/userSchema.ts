@@ -1,7 +1,7 @@
 import { Document } from "mongoose";
 
 export enum UserType {
-  Member = "member",
+  User = "user",
   Admin = "admin",
 }
 
