@@ -6,9 +6,9 @@ const router = express.Router();
 
 router.get("/", getAbilities);
 router.get("/:id", getAbilityById);
-router.post("/", authenticateUser, authorizeRoles(["admin"]), createAbility);
-router.post("/bulk", authenticateUser, authorizeRoles(["admin"]), createAbilitiesBulk);
-router.put("/:id", authenticateUser, authorizeRoles(["admin"]), updateAbility);
-router.delete("/:id", authenticateUser, authorizeRoles(["admin"]), deleteAbility);
+router.post("/", createAbility);
+router.post("/bulk", createAbilitiesBulk);
+router.put("/:id", updateAbility);
+router.delete("/:id", deleteAbility);
 
 export default router;
