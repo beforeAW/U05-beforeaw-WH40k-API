@@ -6,6 +6,10 @@ In this task you will develop and deploy a REST API with Node, Express and Mongo
 
 And this is only focus on backend.
 
+### Developpage:
+
+https://u05-beforeaw-wh-40k-api.vercel.app/
+
 ### Extra assignment:
 
 #### Typescript:
