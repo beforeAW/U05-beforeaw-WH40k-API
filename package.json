@@ -1,5 +1,6 @@
 {
-  "main": "dist/server.js",
+
+  "main": "index.ts",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
@@ -22,7 +23,7 @@
   },
   "scripts": {
     "build": "npx tsc",
-    "start": "ts-node -r tsconfig-paths/register dist/server.js",
-    "dev": "nodemon -r tsconfig-paths/register src/server.ts"
+    "start": "ts-node -r tsconfig-paths/register dist/index.js",
+    "dev": "nodemon -r tsconfig-paths/register api/index.ts"
   }
 }
