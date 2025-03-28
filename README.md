@@ -14,19 +14,34 @@ There is no requirement to use more than traditional JavaScript in the U05, but 
 
 #### Extra functions:
 
-The requirement for passing in the U05an includes a fairly simple API. In order to show your forefoot and take the opportunity to learn extra, in this voluntary work you may have the opportunity to add one or more extra functions (e.g. search, filtering or sorting).
+The requirement for passing in the U05an includes a fairly simple API. In order to show your forefoot and take the opportunity to learn more, you may have the opportunity to add one or more extra functions (e.g., search, filtering, or sorting) in this voluntary work.
 
 
 ## Warhammer 40k API
 
-### First what is Warhammer 40k?
+### First, what is Warhammer 40k?
 
-Warhammer 40,000 (Warhammer 40K) is a tabletop miniature wargame set in a dark, dystopian sci-fi universe where various factions battle for dominance across the galaxy. Players assemble, paint, and command armies of intricately detailed miniatures, representing factions like the Imperium of Man, Chaos, Eldar, Orks, and more. The game combines strategy, dice-based mechanics, and deep lore, emphasizing tactical warfare and narrative-driven battles. Its grimdark setting, where there is "only war," is known for its rich storytelling, massive battles, and an ever-evolving universe shaped by novels, codexes, and community engagement.
+Warhammer 40,000 (Warhammer 40K) is a tabletop miniature wargame set in a dark, dystopian sci-fi universe where various factions battle for dominance across the galaxy. Players assemble, paint, and command armies of intricately detailed miniatures representing factions like the Imperium of Man, Chaos, Eldar, Orks, and more. The game combines strategy, dice-based mechanics, and deep lore, emphasizing tactical warfare and narrative-driven battles. Its grimdark setting, where there is "only war," is known for its rich storytelling, massive battles, and an ever-evolving universe shaped by novels, codexes, and community engagement.
 
 ### The API
 
-This API will provide a comprehensive database of all Warhammer 40K figures, offering detailed information on each model, including faction, unit type, stats and abilities. Users can retrieve data to assist with army building, game strategy, and collection management. The API will support filtering by faction, unit role, and keywords, ensuring quick and easy access to relevant figures. Whether for gameplay reference or lore exploration, this API will serve as an essential tool for Warhammer 40K enthusiasts.
+This API will provide a comprehensive database of all Warhammer 40K figures, offering detailed information on each model, including faction, unit type, stats, and abilities. Users can retrieve data to assist with army building, game strategy, and collection management. The API will support filtering by faction, unit role, and keywords, ensuring quick and easy access to relevant figures. Whether for gameplay reference or lore exploration, this API will be an essential tool for Warhammer 40K enthusiasts.
 
+
+## Getting Started
+
+- Clone the project from GitHub
+  ```
+    git clone https://github.com/beforeAW/U05-beforeaw-WH40k-API.git
+- Install all required packages
+  ```
+    npm run i
+- Copy the .env file from .env.example
+  ```
+    cp .env.example .env
+- Run nodemon
+  ```
+    npm run dev
 ## RESTful API Design
 
 ### Object Modeling
